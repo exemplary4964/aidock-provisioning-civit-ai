@@ -58,7 +58,23 @@ LORA_MODELS=(
     "https://civitai.com/api/download/models/763448"
     # fluxnsfw
     "https://civitai.com/api/download/models/775500"
-    # 
+    # https://civitai.com/models/599757/velvets-mythic-fantasy-styles-or-flux-pony
+    "https://civitai.com/api/download/models/753053"
+    # https://civitai.com/models/600119/rendered-face-detailer-sdxlflux
+    "https://civitai.com/api/download/models/768461"
+    # https://civitai.com/models/673232/flux-fantasy-knights-by-hailoknight
+    "https://civitai.com/api/download/models/753642"
+    # https://civitai.com/models/643366/flux-improved-female-nudity
+    "https://civitai.com/api/download/models/725939"
+    # https://civitai.com/models/668646/full-female-anatomy-fineart-nudity-flux-lora-nsfw-breastspussyassand-more
+    "https://civitai.com/api/download/models/748526"
+    # https://civitai.com/models/681921/flux-hermione-granger-emma-watson
+    "https://civitai.com/api/download/models/763245"
+    # https://civitai.com/models/652318/flux-photography-style
+    "https://civitai.com/api/download/models/729781"
+    # https://civitai.com/models/655753/nsfw-flux-lora
+    "https://civitai.com/api/download/models/733658"
+    
 )
 
 ESRGAN_MODELS=(
