@@ -37,6 +37,18 @@ VAE_MODELS=(
 )
 
 LORA_MODELS=(
+    # flux loras
+    # https://civitai.com/models/689561/fluxperfect-body
+    "https://civitai.com/api/download/models/771747"
+    # https://civitai.com/models/653658?modelVersionId=787093 (BSS - Styles for FLUX)
+    "https://civitai.com/api/download/models/787093"
+    # https://civitai.com/models/699197/hannah-owo-flux
+    "https://civitai.com/api/download/models/782367"
+    # https://civitai.com/models/686766/fluxunchained-lora
+    "https://civitai.com/api/download/models/768637"
+    # https://civitai.com/models/651815/flux-black-pantyhose
+    
+    "https://civitai.com/api/download/models/729212"
     "https://civitai.com/api/download/models/765872"
     "https://civitai.com/api/download/models/781855"
     "https://civitai.com/api/download/models/779278"
