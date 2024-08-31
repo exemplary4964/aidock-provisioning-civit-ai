@@ -33,9 +33,6 @@ EXTENSIONS=(
 )
 
 CHECKPOINT_MODELS=(
-    # "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
-    # flux nf4
-    "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4-v2.safetensors"
     # sd 1.5 models
     # https://civitai.com/models/96629/realcartoon-anime
     "https://civitai.com/api/download/models/359428"
@@ -46,18 +43,6 @@ CHECKPOINT_MODELS=(
 )
 
 LORA_MODELS=(
-  # flux loras
-  # https://civitai.com/models/689561/fluxperfect-body
-  "https://civitai.com/api/download/models/771747"
-  # https://civitai.com/models/653658?modelVersionId=787093 (BSS - Styles for FLUX)
-  "https://civitai.com/api/download/models/787093"
-  # https://civitai.com/models/699197/hannah-owo-flux
-  "https://civitai.com/api/download/models/782367"
-  # https://civitai.com/models/686766/fluxunchained-lora
-  "https://civitai.com/api/download/models/768637"
-  # https://civitai.com/models/651815/flux-black-pantyhose
-  "https://civitai.com/api/download/models/729212"
-
   # sd 1.5 loras
   # https://civitai.com/models/141942/feet-from-below-pose
   "https://civitai.com/api/download/models/157359"
