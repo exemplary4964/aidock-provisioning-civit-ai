@@ -23,6 +23,8 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
+    # nf4 model less reliable
+    "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4-v2.safetensors"
 )
 
 CLIP_MODELS=(
@@ -47,25 +49,16 @@ LORA_MODELS=(
     # https://civitai.com/models/686766/fluxunchained-lora
     "https://civitai.com/api/download/models/768637"
     # https://civitai.com/models/651815/flux-black-pantyhose
-    
     "https://civitai.com/api/download/models/729212"
-    "https://civitai.com/api/download/models/765872"
+    # hand
     "https://civitai.com/api/download/models/781855"
+    # granblue
     "https://civitai.com/api/download/models/779278"
-    "https://civitai.com/api/download/models/779278"
-    "https://civitai.com/api/download/models/746505"
-    "https://civitai.com/api/download/models/776656"
-    "https://civitai.com/api/download/models/721279"
-    "https://civitai.com/api/download/models/738497"
-    "https://civitai.com/api/download/models/734168"
-    "https://civitai.com/api/download/models/765069"
+    # mistoon
     "https://civitai.com/api/download/models/763448"
-    "https://civitai.com/api/download/models/758268"
-    "https://civitai.com/api/download/models/719943"
+    # fluxnsfw
     "https://civitai.com/api/download/models/775500"
-    "https://civitai.com/api/download/models/776656"
-    "https://civitai.com/api/download/models/734884"
-    "https://civitai.com/api/download/models/733502"
+    # 
 )
 
 ESRGAN_MODELS=(
