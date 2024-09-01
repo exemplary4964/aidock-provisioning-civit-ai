@@ -253,12 +253,20 @@ function provisioning_download() {
              -P "$2" \
              "$1"
     elif [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$) ]]; then
-        wget --header="Authorization: Bearer ${CIVITAI_TOKEN}" \
-             --content-disposition \
+        # Append the token as a query parameter to the URL for Civitai
+        # Determine if the URL already has query parameters
+        if [[ "$1" == *\?* ]]; then
+            # URL already has parameters, use &
+            url_with_token="${1}&token=${CIVITAI_TOKEN}"
+        else
+            # URL has no parameters, use ?
+            url_with_token="${1}?token=${CIVITAI_TOKEN}"
+        fi
+        wget --content-disposition \
              --show-progress \
              -e dotbytes="${3:-4M}" \
              -P "$2" \
-             "${1}"
+             "$url_with_token"
     else
         wget -qnc --content-disposition \
              --show-progress \
