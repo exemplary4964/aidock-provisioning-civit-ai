@@ -30,28 +30,56 @@ EXTENSIONS=(
     "https://github.com/Bing-su/adetailer"
     "https://github.com/zanllp/sd-webui-infinite-image-browsing"
     "https://github.com/hako-mikan/sd-webui-regional-prompter"
+    "https://github.com/DominikDoom/a1111-sd-webui-tagcomplete"
 )
 
 CHECKPOINT_MODELS=(
-    # sd 1.5 models
-    # https://civitai.com/models/96629/realcartoon-anime
-    "https://civitai.com/api/download/models/359428"
+    # sd models
     # https://civitai.com/models/295391/fefa-hentai-mix
-    "https://civitai.com/api/download/models/331919"
+    # "https://civitai.com/api/download/models/331919"
     # https://civitai.com/models/136054/hardcore-hentai-13
-    "https://civitai.com/api/download/models/306531"
+    # "https://civitai.com/api/download/models/306531"
+
+    # pony models
+    # https://civitai.com/models/376031/hassaku-xl-hentai
+    "https://civitai.com/api/download/models/559994"
+    # https://civitai.com/models/24149/mistoonanime pony
+    "https://civitai.com/api/download/models/692489"
+    # https://civitai.com/models/257749/pony-diffusion-v6-xl?modelVersionId=290640
+    "https://civitai.com/api/download/models/290640"
+    # https://civitai.com/models/288584/autismmix-sdxl
+    "https://civitai.com/api/download/models/324619"
+    
 )
 
 LORA_MODELS=(
   # sd 1.5 loras
   # https://civitai.com/models/141942/feet-from-below-pose
-  "https://civitai.com/api/download/models/157359"
+  # "https://civitai.com/api/download/models/157359"
   # https://civitai.com/models/171391/dd-crossed-legs-feet-focus-soles
-  "https://civitai.com/api/download/models/192551"
+  # "https://civitai.com/api/download/models/192551"
   # https://civitai.com/models/189085?modelVersionId=212375 (Mizar's - Foot Focus Helper)
-  "https://civitai.com/api/download/models/212375"
+  # "https://civitai.com/api/download/models/212375"
   # https://civitai.com/models/22471/lick-my-feet
+
+  # Pony loras
   "https://civitai.com/api/download/models/48228"
+  # https://civitai.com/models/341353/expressiveh-hentai-lora-style?modelVersionId=382152
+  "https://civitai.com/api/download/models/382152"
+  # https://civitai.com/models/601972/dinoillus-style-lora-for-ponyxl?modelVersionId=672831
+  "https://civitai.com/api/download/models/672831"
+  # https://civitai.com/models/544110/pantyhose-nylon-and-legwear-pony-xl
+  "https://civitai.com/api/download/models/605067"
+  # https://civitai.com/models/196908/disgusted-face-sd-15-pony-or-goofy-ai
+  "https://civitai.com/api/download/models/497567"
+  # https://civitai.com/models/524258/feet-nekoda-maoda-style
+  "https://civitai.com/api/download/models/582472"
+  # https://civitai.com/models/637377/footjob
+  "https://civitai.com/api/download/models/712699"
+  # https://civitai.com/models/538285/pov-foot-stomp-concept-pdxl-lora
+  "https://civitai.com/api/download/models/598409"
+  # https://civitai.com/models/383086/pony-detail-tweaker
+  "https://civitai.com/api/download/models/449738"
 )
 
 VAE_MODELS=(
@@ -61,6 +89,10 @@ VAE_MODELS=(
     "https://civitai.com/api/download/models/311162"
     # https://civitai.com/models/23906/kl-f8-anime2-vae
     "https://civitai.com/api/download/models/28569"
+    # https://civitai.com/models/257749/pony-diffusion-v6-xl?modelVersionId=290640 vae
+    "https://civitai.com/api/download/models/290640?type=VAE&format=SafeTensor"
+    # https://civitai.com/models/660673/pony-standard-vae
+    "https://civitai.com/api/download/models/785437"
 )
 
 ESRGAN_MODELS=(
@@ -73,6 +105,7 @@ CONTROLNET_MODELS=(
 )
 
 EMBEDDINGS=(
+    # sd embeddings
     # https://civitai.com/models/90707/negfeet-improve-feet-quality
     "https://civitai.com/api/download/models/98441"
     # https://civitai.com/models/5224/bad-artist-negative-embedding?modelVersionId=6056 (Bad artist Negative embedding)
@@ -85,6 +118,8 @@ EMBEDDINGS=(
     "https://civitai.com/api/download/models/60938"
     # https://civitai.com/models/4629/deep-negative-v1x?modelVersionId=5637
     "https://civitai.com/api/download/models/5637"
+    # https://civitai.com/models/332646/pony-pdxl-negative-embeddings
+    "https://civitai.com/api/download/models/720175"
 )
 
 
@@ -218,13 +253,12 @@ function provisioning_download() {
              -P "$2" \
              "$1"
     elif [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$) ]]; then
-        # Append the token as a query parameter to the URL for Civitai
-        url_with_token="${1}?token=${CIVITAI_TOKEN}"
-        wget --content-disposition \
+        wget --header="Authorization: Bearer ${CIVITAI_TOKEN}" \
+             --content-disposition \
              --show-progress \
              -e dotbytes="${3:-4M}" \
              -P "$2" \
-             "$url_with_token"
+             "${1}"
     else
         wget -qnc --content-disposition \
              --show-progress \
