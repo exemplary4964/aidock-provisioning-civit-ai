@@ -80,6 +80,11 @@ LORA_MODELS=(
   "https://civitai.com/api/download/models/598409"
   # https://civitai.com/models/383086/pony-detail-tweaker
   "https://civitai.com/api/download/models/449738"
+  # https://civitai.com/models/300005?modelVersionId=378684  Incase Style [PonyXL]
+  "https://civitai.com/api/download/models/378684"
+  # https://civitai.com/models/352581?modelVersionId=398847 vixon pony
+  "https://civitai.com/api/download/models/398847"
+  
 )
 
 VAE_MODELS=(
@@ -120,6 +125,8 @@ EMBEDDINGS=(
     "https://civitai.com/api/download/models/5637"
     # https://civitai.com/models/332646/pony-pdxl-negative-embeddings
     "https://civitai.com/api/download/models/720175"
+    # https://civitai.com/models/87243?modelVersionId=287973 simple negative
+    "https://civitai.com/api/download/models/287973"
 )
 
 
