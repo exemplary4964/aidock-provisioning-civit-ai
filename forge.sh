@@ -42,13 +42,13 @@ CHECKPOINT_MODELS=(
 
     # pony models
     # https://civitai.com/models/376031/hassaku-xl-hentai
-    "https://civitai.com/api/download/models/559994"
+    # "https://civitai.com/api/download/models/559994"
     # https://civitai.com/models/24149/mistoonanime pony
-    "https://civitai.com/api/download/models/692489"
+    # "https://civitai.com/api/download/models/692489"
     # https://civitai.com/models/257749/pony-diffusion-v6-xl?modelVersionId=290640
     "https://civitai.com/api/download/models/290640"
     # https://civitai.com/models/288584/autismmix-sdxl
-    "https://civitai.com/api/download/models/324619"
+    # "https://civitai.com/api/download/models/324619"
     
 )
 
