@@ -129,7 +129,6 @@ EMBEDDINGS=(
     "https://civitai.com/api/download/models/287973"
 )
 
-
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -165,7 +164,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/embeddings" \
         "${EMBEDDINGS[@]}"
-     
+
+    cp -r "/workspace/storage/stable_diffusion/models/embeddings/"* "/opt/stable-diffusion-webui/embeddings/"
+
     PLATFORM_ARGS=""
     if [[ $XPU_TARGET = "CPU" ]]; then
         PLATFORM_ARGS="--use-cpu all --skip-torch-cuda-test --no-half"
